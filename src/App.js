@@ -13,11 +13,6 @@ function App() {
         <div>
             <NavBar />
             <ItemListContainer>
-                <Items nombre="item1" stock={5}></Items>
-                <Items nombre="item2" stock={10}></Items>
-                <Items nombre="item3" stock={4}></Items>
-                <Items nombre="item4" stock={2}></Items>
-                <Items nombre="item5" stock={7}></Items>
             </ItemListContainer>
         </div>    
        
