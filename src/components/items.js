@@ -2,7 +2,7 @@ import React,{ useEffect, useState} from "react";
 import {Button, Card, Container, Row,} from "react-bootstrap";
 
 
-export function Items(props){
+export function Items({items}){
     let [count, setCount] = useState(0);
 
     const onAdd=()=>{
@@ -16,17 +16,16 @@ export function Items(props){
           <div>
           <Card style={{ width: "18rem", margin:"3rem"}}>
             <Card.Body>
-              <Card.Title>{props.nombre}</Card.Title>
+              <Card.Title>{items.nombre}</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">
-                Card Subtitle
+                {items.descripcion}
               </Card.Subtitle>
               <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+                  ${items.precio}
               </Card.Text>
               <Container>
                 <Row className="justify-content-around">
-                  <Button onClick={onAdd} disabled={count >= props.stock}>+</Button>
+                  <Button onClick={onAdd} disabled={count >= items.stock}>+</Button>
                   <Card.Text>
                     {count}
                   </Card.Text>
