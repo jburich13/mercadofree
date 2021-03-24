@@ -13,7 +13,6 @@ function App() {
     return (    
         <div>
             <NavBar />
-            <ItemDetailContainer></ItemDetailContainer>
             <ItemListContainer>
             </ItemListContainer>
         </div>    

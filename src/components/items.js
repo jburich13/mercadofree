@@ -1,5 +1,6 @@
 import React,{ useEffect, useState} from "react";
 import {Button, Card, Container, Row,} from "react-bootstrap";
+import ItemDetailContainer from "./ItemDetailContainer";
 
 
 export function Items({items}){
@@ -23,6 +24,7 @@ export function Items({items}){
               <Card.Text>
                   ${items.precio}
               </Card.Text>
+              <ItemDetailContainer></ItemDetailContainer>
               <Container>
                 <Row className="justify-content-around">
                   <Button onClick={onAdd} disabled={count >= items.stock}>+</Button>
