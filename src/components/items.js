@@ -1,7 +1,7 @@
-import React,{ useEffect, useState} from "react";
+import React,{useState} from "react";
 import {Button, Card, Container, Row,} from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import ItemDetailContainer from "./ItemDetailContainer";
+
 
 
 export function Items({items}){

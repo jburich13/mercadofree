@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {Container,Row} from "react-bootstrap";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import products from "../products"
 import { ItemList } from "./ItemList";
 

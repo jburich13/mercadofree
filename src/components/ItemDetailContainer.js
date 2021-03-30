@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import {Container,Row} from "react-bootstrap";
 import { useParams } from "react-router";
 import {ItemDetail} from "../components/ItemDetail"
 import products from "../products"
