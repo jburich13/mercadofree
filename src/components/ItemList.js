@@ -1,5 +1,5 @@
 import React from "react" 
-import {Items} from "../components/Items"
+import {Items} from "./Items"
 
 
 export function ItemList({items=[]}){

@@ -1,5 +1,6 @@
 import React,{ useEffect, useState} from "react";
 import {Button, Card, Container, Row,} from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import ItemDetailContainer from "./ItemDetailContainer";
 
 
@@ -18,13 +19,6 @@ export function Items({items}){
           <Card style={{ width: "18rem", margin:"3rem"}}>
             <Card.Body>
               <Card.Title>{items.nombre}</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">
-                {items.descripcion}
-              </Card.Subtitle>
-              <Card.Text>
-                  ${items.precio}
-              </Card.Text>
-              <ItemDetailContainer></ItemDetailContainer>
               <Container>
                 <Row className="justify-content-around">
                   <Button onClick={onAdd} disabled={count >= items.stock}>+</Button>
@@ -35,8 +29,9 @@ export function Items({items}){
                 </Row>
               </Container>
               <Container>
-                <Row className="justify-content-center mt-3">
-                <Button >Agregar al carrito</Button>
+                <Row className=" row justify-content-center">
+                <Button className="m-2">Agregar al carrito</Button>
+                <Button className="m-2"> <NavLink className="text-white" to={`item/${items.id}`}>Detalle</NavLink> </Button>
                 </Row>
               </Container>
               
