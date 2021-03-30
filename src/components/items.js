@@ -31,7 +31,7 @@ export function Items({items}){
               <Container>
                 <Row className=" row justify-content-center">
                 <Button className="m-2">Agregar al carrito</Button>
-                <Button className="m-2"> <NavLink className="text-white" to={`item/${items.id}`}>Detalle</NavLink> </Button>
+                <Button className="m-2"> <NavLink className="text-white" to={`item/${items.id}`}>Detalle</NavLink></Button>
                 </Row>
               </Container>
               
