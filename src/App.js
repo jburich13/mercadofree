@@ -5,7 +5,7 @@ import ItemListContainer from "./components/itemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import NavBar from "./components/NavBar"
 import {BrowserRouter, Switch, Route} from "react-router-dom"
-import notFound from "./components/404"
+import NotFound from "./components/404"
 
 
 
@@ -33,8 +33,8 @@ function App() {
                </Route>
 
                <Route path="*">
-                     <notFound>
-                     </notFound>
+                     <NotFound>
+                     </NotFound>
                </Route>
            </Switch>
             

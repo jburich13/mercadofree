@@ -2,7 +2,7 @@ import React from "react"
 
 
 
-function notFound(){
+function NotFound(){
 return <figure>
             <div className="sad-mac"></div>
                 <figcaption>
@@ -27,4 +27,4 @@ return <figure>
         </figure>
 }
 
-export default notFound
+export default NotFound
