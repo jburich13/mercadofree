@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import {Button, Card, Container, Row,} from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 
@@ -29,9 +29,9 @@ export function Items({items}){
                 </Row>
               </Container>
               <Container>
-                <Row className=" row justify-content-center">
+                <Row className="row justify-content-center">
                 <Button className="m-2">Agregar al carrito</Button>
-                <Button className="m-2"> <NavLink className="text-white" to={`item/${items.id}`}>Detalle</NavLink></Button>
+                <Button className="m-2"> <Link className="text-white" to={`/item/${items.id}`}>Detalle</Link></Button>
                 </Row>
               </Container>
               
