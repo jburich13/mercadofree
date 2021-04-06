@@ -1,40 +1,23 @@
 import React,{useState} from "react";
 import {Button, Card, Container, Row,} from "react-bootstrap";
 import { Link } from "react-router-dom";
+import ItemCount from "./ItemCount"
 
 
 
 export function Items({items}){
-    let [count, setCount] = useState(0);
-
-    const onAdd=()=>{
-      setCount(count=count+1);
-    }
-    
-    const onRemove=()=>{
-      setCount(count=count-1);
-    }
+      console.log(typeof items.stock)
       return (
           <div>
           <Card style={{ width: "18rem", margin:"3rem"}}>
             <Card.Body>
               <Card.Title>{items.nombre}</Card.Title>
-              <Container>
-                <Row className="justify-content-around">
-                  <Button onClick={onAdd} disabled={count >= items.stock}>+</Button>
-                  <Card.Text>
-                    {count}
-                  </Card.Text>
-                  <Button onClick={onRemove}  disabled={count <= 0}>-</Button>
-                </Row>
-              </Container>
-              <Container>
+              <ItemCount stock ={items.stock}>
+              </ItemCount>
                 <Row className="row justify-content-center">
                 <Button className="m-2">Agregar al carrito</Button>
                 <Button className="m-2"> <Link className="text-white" to={`/item/${items.id}`}>Detalle</Link></Button>
-                </Row>
-              </Container>
-              
+                </Row>  
             </Card.Body>
           </Card>
         </div>
