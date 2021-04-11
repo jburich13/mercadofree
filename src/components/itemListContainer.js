@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {Container,Row} from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import products from "../products"
 import { ItemList } from "./ItemList";
 
 
