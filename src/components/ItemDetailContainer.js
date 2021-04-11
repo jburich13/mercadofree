@@ -9,24 +9,25 @@ import products from "../products"
 function ItemDetailContainer() {
   const [items2, setItems2] = useState(null)
   const {itemid} = useParams();
-  const item  = ()=>{
-    return new Promise((res,rej) =>{
-        setTimeout(()=>{
-            if(itemid){
-              const itemFiltered = products.find((item)=>{
-                return item.id.toString() === itemid;
-              })
-              res(itemFiltered)
-            } else res(products)
-           
-        },2000)
-  })
-}
+  useEffect(()=> {
+    if(itemid){
+      fetch("https://custom-build-jburich13.vercel.app/api/index/"+itemid).then(res=>res.json())
+      .then(data =>{
+            setItems2(data)
+            console.log("Hola2")
+              });
+
+    } else{
+      fetch("https://custom-build-jburich13.vercel.app/api/index").then(res=>res.json())
+      .then(data =>{
+            setItems2(data)
+            console.log("Hola")
+              });
+      
+    }
+   
+  },[itemid])
   
-  useEffect(() => {
-    item().then((res)=> setItems2(res))
-    return;
-}, [itemid])
     return <ItemDetail itemsDetail={items2}></ItemDetail>
   }
 

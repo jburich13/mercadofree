@@ -14,9 +14,8 @@ function NavBar (){
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
       <NavLink className="text-dark mr-3 ml-3" to="/">Home</NavLink>
-      <NavLink className="text-dark mr-3 ml-3" to={`/category/0`}>Categoria 0</NavLink>
-      <NavLink className="text-dark mr-3 ml-3" to="/category/1">Categoria 1</NavLink>
-
+      <NavLink className="text-dark mr-3 ml-3" to={`/category/Teclados`}>Teclados</NavLink>
+      <NavLink className="text-dark mr-3 ml-3" to="/category/Televisores">Televisores</NavLink>
     </Nav>
     <CartWidget />
   </Navbar.Collapse>

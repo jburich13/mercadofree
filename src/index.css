@@ -12,3 +12,7 @@ code {
 .carrito {
     width: 3rem;
 }
+
+.Home__imgCard {
+    width: 10rem !important;
+}

@@ -14,12 +14,9 @@ export function ItemCount(item){
     const onRemove=()=>{
       setCount(count=count-1);
     }
-
-    console.log(typeof stock)
-
     return  <Container>
     <Row className="justify-content-around">
-      <Button onClick={onAdd} disabled={count >= item.stock}>+</Button>
+      <Button onClick={onAdd} disabled={count >=item.item}>+</Button>
       <Card.Text>
         {count}
       </Card.Text>
