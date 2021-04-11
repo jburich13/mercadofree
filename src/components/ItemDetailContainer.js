@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import {ItemDetail} from "../components/ItemDetail"
-import products from "../products"
+
 
 
 
