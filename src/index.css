@@ -18,3 +18,7 @@ code {
     width: 10rem !important;
     object-fit: fill;
 }
+
+.loader {
+    padding-top: 90rem !important;
+}
