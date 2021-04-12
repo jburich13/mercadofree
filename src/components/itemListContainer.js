@@ -3,7 +3,6 @@ import {Container,Row} from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { ItemList } from "./ItemList";
 import FadeLoader from "react-spinners/FadeLoader";
-import fadeIn from "react-animations"
 
 
 
