@@ -1,15 +1,14 @@
 import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
 import {Form, FormControl, Button} from "react-bootstrap"
-import React,{useState} from "react"
+import React from "react"
 import CartWidget from "./CartWidget"
-import {NavLink,Link, useHistory} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 
 
 
 function NavBar (){
   
-  const [search, setSearch] = useState();
 
   // function handleChange(e){
   //   setSearch(e.target.value);
@@ -29,7 +28,7 @@ function NavBar (){
     </Nav>
     <CartWidget />
     <Form inline className="ml-5">
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" onChange={event => {setSearch(event.target.value)}} />
+      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
       <Button variant="outline-success" >Search</Button>
     </Form>
   </Navbar.Collapse>
