@@ -12,9 +12,10 @@ export function Items({items}){
             <div className="row justify-content-around">
             <Card style={{ width: "18rem", margin:"3rem"}}>
             <Card.Body>
-
-            <Card.Img variant="top" src={items.img.url} className="Home__imgCard" />
-              <Card.Title>{items.name}</Card.Title>
+              <Row className="justify-content-center">
+                <Card.Img variant="top" src={items.img.url} className="Home__imgCard text-center" />
+              </Row>
+              <Card.Title className="m-3">{items.name}</Card.Title>
               <Card.Text>
                 <Row className="m-3">
                   Precio: {items.price}
