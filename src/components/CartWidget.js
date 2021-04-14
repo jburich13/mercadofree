@@ -8,10 +8,10 @@ import {CartContext} from "./context/CartContext"
 function CartWidget(){
 
     const {cart,cartLength} = useContext(CartContext);
-    console.log(cart);
+    console.log(cart)
     return(<div>
         <Row>
-            <h5>{cart[0]?.cant}</h5>
+            <h5>{cartLength() <= 0 ? "" : cartLength()}</h5>
             <img className="carrito" src={carrito} alt="carrito"></img>
         </Row>
        

@@ -23,7 +23,7 @@ export function Items({items}){
                   Categoria: {items.category}
                 </Row>
               </Card.Text>
-              <ItemCount item={items.stock}>
+              <ItemCount  item={items} stock={items.stock}>
               </ItemCount>
                 <Row className="row justify-content-center">
                 <Button className="m-2"> <Link className="text-white" to={`/item/${items._id}`}>Detalles</Link></Button>

@@ -4,14 +4,16 @@ import {Container,Row, Button, Card} from "react-bootstrap";
 import {CartContext} from "./context/CartContext"
 
 
-export function ItemCount(item){
+export function ItemCount(item, stock){
 
     let [count, setCount] = useState(0);
-    const {cart, addToCart} = useContext(CartContext)
+    const {cart, addToCart, removeFromCart} = useContext(CartContext)
     const agregarCarrito = ()=>{
       addToCart(item, count);
     }
-
+    const eliminarDelCarrito = ()=>{
+      removeFromCart(item, count);
+    }
     const onAdd=()=>{
       setCount(count=count+1);
     }
@@ -21,7 +23,7 @@ export function ItemCount(item){
     }
     return  <Container>
     <Row className="justify-content-around">
-      <Button onClick={onAdd} disabled={count >=item.item}>+</Button>
+      <Button onClick={onAdd} disabled={count >=stock}>+</Button>
       <Card.Text>
         {count}
       </Card.Text>
@@ -29,6 +31,7 @@ export function ItemCount(item){
     </Row>
     <Row className="justify-content-center">
       <Button className="m-2" onClick={agregarCarrito} >Agregar al carrito</Button>
+      <Button className="m-2" onClick={eliminarDelCarrito} >Eliminar del carrito</Button>
     </Row>
     
   </Container>
