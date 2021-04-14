@@ -7,8 +7,9 @@ import {CartContext} from "./context/CartContext"
 export function ItemCount(item, stock){
 
     let [count, setCount] = useState(0);
-    const {cart, addToCart, removeFromCart} = useContext(CartContext)
+    const {addToCart, removeFromCart} = useContext(CartContext)
     const agregarCarrito = ()=>{
+      console.log("hola desde count", item)
       addToCart(item, count);
     }
     const eliminarDelCarrito = ()=>{

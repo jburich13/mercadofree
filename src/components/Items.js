@@ -25,8 +25,8 @@ export function Items({items}){
               </Card.Text>
               <ItemCount  item={items} stock={items.stock}>
               </ItemCount>
-                <Row className="row justify-content-center">
-                <Button className="m-2"> <Link className="text-white" to={`/item/${items._id}`}>Detalles</Link></Button>
+                <Row className="justify-content-center">
+                <Button className="m-2"><Link className="text-white" to={`/item/${items._id}`}>Detalles</Link></Button>
                 </Row>  
             </Card.Body>
           </Card>

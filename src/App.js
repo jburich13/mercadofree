@@ -8,6 +8,9 @@ import {BrowserRouter, Switch, Route} from "react-router-dom"
 import NotFound from "./components/404"
 import {FormProvider} from "./components/context/FormContext"
 import {CartProvider} from "./components/context/CartContext"
+import {CartView} from "./components/CartView";
+import {TotalPrice} from "./components/TotalPrice"
+
 
 
 
@@ -30,6 +33,11 @@ function App() {
                               <ItemListContainer>
                               </ItemListContainer>   
                          </Route>
+                         <Route exact path="/cart">
+                              <CartView>
+                              </CartView>
+                              <TotalPrice></TotalPrice>   
+                         </Route>
                          <Route path="/category/:categoryid">
                               <ItemListContainer>
                               </ItemListContainer>   
@@ -45,7 +53,7 @@ function App() {
                     </Switch>
                </BrowserRouter>   
                </CartProvider> 
-         </FormProvider>
+         </FormProvider> 
         
        
        

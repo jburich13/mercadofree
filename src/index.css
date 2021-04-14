@@ -16,9 +16,18 @@ code {
 
 .Home__imgCard {
     width: 10rem !important;
-    object-fit: fill;
+    object-fit: contain;
 }
 
 .loader {
     padding-top: 90rem !important;
+}
+
+.Cart__titleItem,
+.Cart__priceItem {
+    color: white;
+}
+
+.Cart__ContainerItems {
+    background-color: grey !important;
 }
