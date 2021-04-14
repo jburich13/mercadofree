@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import {useContext} from "react"
 import {CartContext} from "./context/CartContext"
 
 
 function CartItems({items}){
-    const[cant, setCant] = useState(items.cant);
-    const {cart, incrementQuantity, decrementQuantity, addToCart, removeFromCart,cartLength} = useContext(CartContext)
+    const {incrementQuantity, decrementQuantity,deleteFromProductFromCart} = useContext(CartContext)
     useEffect(()=>{
         isFull()
-    },[cant])
+    })
 
     
     const onAdd=()=>{
@@ -18,6 +17,10 @@ function CartItems({items}){
       
     const onRemove=()=>{
        decrementQuantity(items,1)
+    }
+
+    const deleteFromCart=()=>{
+        deleteFromProductFromCart(items)
     }
 
     const isFull = ()=>{
@@ -45,7 +48,7 @@ function CartItems({items}){
                         <Button className="mt-5" onClick={onRemove}>
                             -
                         </Button>
-                        <Button className="mt-5">
+                        <Button className="mt-5" onClick={deleteFromCart}>
                             X
                         </Button>
                        

@@ -1,5 +1,5 @@
 
-import React,{useContext, useEffect, useState} from "react";
+import React,{useContext, useEffect} from "react";
 import { Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import carrito from "../shopping-cart.png"
@@ -9,8 +9,6 @@ import {CartContext} from "./context/CartContext"
 
 function CartWidget(){
     const {cart,cartLength,setCart,} = useContext(CartContext);
-    const [cartQuantity, setCartQuantity] = useState(cartLength())
-
     useEffect(()=>{
         setCart(cart)
     })

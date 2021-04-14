@@ -63,14 +63,17 @@ function CartProvider({defaultValue = [], children}){
        
     }
 
-
-
-    const dropCart = ()=>{
-        setCart([]);
+    const deleteFromProductFromCart = (producto)=>{
+        console.log(producto)
+        let productoAEliminar = cart.find(x => x.prod.item._id === producto.prod.item._id)
+        let carritoModificado = [...cart]
+        carritoModificado.splice(cart.indexOf(productoAEliminar),1) 
+        setCart(carritoModificado)
     }
 
 
-    return <CartContext.Provider value={{cart, setCart, addToCart, cartLength, removeFromCart, incrementQuantity, decrementQuantity, cartPrice}}>
+
+    return <CartContext.Provider value={{cart, setCart, addToCart, cartLength, removeFromCart, incrementQuantity, decrementQuantity, cartPrice,deleteFromProductFromCart}}>
         {children}
         </CartContext.Provider>
 }
