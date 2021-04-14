@@ -1,16 +1,20 @@
 import React,{useContext} from "react";
+import { Row } from "react-bootstrap";
 import carrito from "../shopping-cart.png"
-import {CartContext} from "./CartContext"
+import {CartContext} from "./context/CartContext"
 
 
 
 function CartWidget(){
 
-    const {cart, setCart} = useContext(CartContext);
+    const {cart,cartLength} = useContext(CartContext);
     console.log(cart);
-
     return(<div>
-        <img className="carrito" src={carrito} alt="carrito"></img>
+        <Row>
+            <h5>{cart[0]?.cant}</h5>
+            <img className="carrito" src={carrito} alt="carrito"></img>
+        </Row>
+       
     </div>)
 
 }

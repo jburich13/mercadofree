@@ -1,7 +1,7 @@
 import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
 import {Form, FormControl, Button} from "react-bootstrap"
-import React,{useState, useEffect, useContext} from "react"
+import React,{useContext} from "react"
 import CartWidget from "./CartWidget"
 import {NavLink} from "react-router-dom"
 import {FormContext} from "../components/context/FormContext"

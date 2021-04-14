@@ -11,12 +11,11 @@ function ItemListContainer() {
   const [items, setItems] = useState([])
   const [loading, setLoading] = useState(true);
   const {categoryid} = useParams();
-  const {formValue, setValueForm} = useContext(FormContext);
+  const {formValue} = useContext(FormContext);
 
 
   useEffect(()=> {
     setLoading(true)
-    console.log(formValue)
     if(categoryid){
       fetch("https://custom-build-jburich13.vercel.app/api/index/categoria/"+categoryid).then(res=>res.json())
       .then(data =>{
