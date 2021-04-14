@@ -6,7 +6,6 @@ import ItemCount from "./ItemCount"
 
 
 export function Items({items}){
-  console.log(items.img.url)    
   return (
           <div>
             <div className="row justify-content-around">

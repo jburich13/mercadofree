@@ -1,15 +1,17 @@
-import React from "react";
+import React,{useContext} from "react";
 import carrito from "../shopping-cart.png"
+import {CartContext} from "./CartContext"
 
 
 
-class CartWidget extends React.Component {
-render(){
+function CartWidget(){
+
+    const {cart, setCart} = useContext(CartContext);
+    console.log(cart);
+
     return(<div>
         <img className="carrito" src={carrito} alt="carrito"></img>
     </div>)
-
-}
 
 }
 

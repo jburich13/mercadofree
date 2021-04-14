@@ -1,20 +1,19 @@
 import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
 import {Form, FormControl, Button} from "react-bootstrap"
-import React from "react"
+import React,{useState, useEffect, useContext} from "react"
 import CartWidget from "./CartWidget"
 import {NavLink} from "react-router-dom"
+import {FormContext} from "../components/context/FormContext"
 
 
 
 function NavBar (){
-  
-
-  // function handleChange(e){
-  //   setSearch(e.target.value);
-  //   console.log(search);
-  // }
-
+  const capitalize = (s) => {
+    if (typeof s !== 'string') return ''
+    return s.charAt(0).toUpperCase() + s.slice(1)
+  }
+  const {setFormValue} = useContext(FormContext);
   return <div>
   <Navbar bg="light" expand="lg">
   
@@ -28,7 +27,7 @@ function NavBar (){
     </Nav>
     <CartWidget />
     <Form inline className="ml-5">
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+      <FormControl type="text" placeholder="Search" className="mr-sm-2" onChange={e=> setFormValue(capitalize(e.target.value))} />
       <Button variant="outline-success" >Search</Button>
     </Form>
   </Navbar.Collapse>
