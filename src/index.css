@@ -14,8 +14,12 @@ code {
     width: 3rem;
 }
 
+.card-body {
+    padding: 0 !important;
+}
+
 .Home__imgCard {
-    width: 10rem !important;
+    width: 18rem !important;
     object-fit: contain;
 }
 
