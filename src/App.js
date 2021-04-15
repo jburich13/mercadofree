@@ -22,8 +22,7 @@ function App() {
          <FormProvider>
                <CartProvider>
                <BrowserRouter>
-               <NavBar />
-              
+               <NavBar className="color-nav"></NavBar>
                     <Switch>
                          <Route exact path="/">
                               <ItemListContainer>

@@ -15,15 +15,15 @@ function NavBar (){
   }
   const {setFormValue} = useContext(FormContext);
   return <div>
-  <Navbar bg="light" expand="lg">
+  <Navbar variant="light" expand="lg">
   
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
-      <NavLink className="text-dark mr-3 ml-3" to="/">Home</NavLink>
-      <NavLink className="text-dark mr-3 ml-3" to={`/category/Teclados`}>Teclados</NavLink>
-      <NavLink className="text-dark mr-3 ml-3" to="/category/Televisores">Televisores</NavLink>
-      <NavLink className="text-dark mr-3 ml-3" to="/category/Auriculares">Auriculares</NavLink>
+      <NavLink className="text-dark mr-3 ml-3 Navbar-link" to="/">Home</NavLink>
+      <NavLink className="text-dark mr-3 ml-3 Navbar-link" to={`/category/Teclados`}>Teclados</NavLink>
+      <NavLink className="text-dark mr-3 ml-3 Navbar-link" to="/category/Televisores">Televisores</NavLink>
+      <NavLink className="text-dark mr-3 ml-3 Navbar-link" to="/category/Auriculares">Auriculares</NavLink>
     </Nav>
     <CartWidget />
     <Form inline className="ml-5">

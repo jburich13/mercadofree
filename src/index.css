@@ -3,7 +3,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #212529 !important;
+    background-color: #335C67 !important;
 }
 
 code {
@@ -19,7 +19,13 @@ code {
     object-fit: contain;
 }
 
-.loader {
+@media only screen and (max-width: 767px) {
+    .btn {
+        margin-bottom: 20px;
+    }
+}
+
+License Terms .loader {
     padding-top: 90rem !important;
 }
 
@@ -29,5 +35,6 @@ code {
 }
 
 .Cart__ContainerItems {
-    background-color: grey !important;
+    background-color: #540B0E !important;
+    color: black !important;
 }

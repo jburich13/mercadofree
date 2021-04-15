@@ -160,3 +160,47 @@
         a:hover {
             text-decoration: none !important;
         }
+        
+        .navbar {
+            background-color: #E09F3E;
+            font-family: 'Chivo', sans-serif;
+        }
+        
+        .Navbar-link:hover {
+            font-weight: bold;
+        }
+        
+        .Home_ElementCard {
+            background-color: #FFF3B0;
+            font-family: 'Overpass', sans-serif;
+        }
+        
+        .Home__TitleCard {
+            font-weight: bold;
+        }
+        
+        .btn {
+            color: white !important;
+            background-color: #9E2A2B !important;
+            border: 1px solid #9E2A2B !important;
+        }
+        
+        .btn:hover {
+            color: #9E2A2B !important;
+            background-color: white !important;
+        }
+        
+        .btn:focus,
+        .btn:active {
+            box-shadow: none !important;
+        }
+        
+        .btn-primary {
+            border: none !important;
+        }
+        
+        .btn-primary:focus,
+        .btn-primary:active {
+            border: none !important;
+            box-shadow: none !important;
+        }
