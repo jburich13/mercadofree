@@ -11,14 +11,13 @@ function CartProvider({defaultValue = [], children}){
     }
 
     const cartPrice = () => {
-        
         return cart.reduce((acumulador,valorCarrito) => {
             return acumulador + valorCarrito.cant*valorCarrito.prod.item.price},0)
     }
 
 
     const addToCart = (nuevoProducto, cantidad) =>{
-        let id_producto = cart.findIndex(x => x.prod.item._id === nuevoProducto.item._id)
+        let id_producto = cart.findIndex(x => x.prod.item.id === nuevoProducto.item.id)
         if(id_producto===-1){
                 setCart(cart => [...cart, {prod: nuevoProducto, cant: cantidad}])
         } else {
@@ -31,7 +30,7 @@ function CartProvider({defaultValue = [], children}){
     }
 
     const removeFromCart = (producto, cantidad)=>{
-        let productoAEliminar = cart.find(x => x.prod.item._id === producto.item._id)
+        let productoAEliminar = cart.find(x => x.prod.item.id === producto.item.id)
         let carritoModificado = [...cart]
         if(cantidad === productoAEliminar.cant){
             carritoModificado.splice(cart.indexOf(productoAEliminar),1) 
@@ -46,14 +45,14 @@ function CartProvider({defaultValue = [], children}){
     }
 
     const incrementQuantity = (nuevoProducto, cantidad) =>{
-        let id_producto = cart.findIndex(x => x.prod.item._id === nuevoProducto.prod.item._id)
+        let id_producto = cart.findIndex(x => x.prod.item.id === nuevoProducto.prod.item.id)
         let carritoModificado = [...cart];
         carritoModificado[id_producto].cant+=cantidad;
         setCart(carritoModificado)
     }
 
     const decrementQuantity = (producto,cantidad) =>{
-        let productoAEliminar = cart.find(x => x.prod.item._id === producto.prod.item._id)
+        let productoAEliminar = cart.find(x => x.prod.item.id === producto.prod.item.id)
         let carritoModificado = [...cart]
         if(cantidad > productoAEliminar.cant){
             console.log("ERROR, NO SE PUEDE SACAR MAS DE LA CANTIDAD QUE TENES")
@@ -65,7 +64,7 @@ function CartProvider({defaultValue = [], children}){
 
     const deleteFromProductFromCart = (producto)=>{
         console.log(producto)
-        let productoAEliminar = cart.find(x => x.prod.item._id === producto.prod.item._id)
+        let productoAEliminar = cart.find(x => x.prod.item.id === producto.prod.item.id)
         let carritoModificado = [...cart]
         carritoModificado.splice(cart.indexOf(productoAEliminar),1) 
         setCart(carritoModificado)

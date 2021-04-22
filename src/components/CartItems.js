@@ -4,6 +4,7 @@ import {useContext} from "react"
 import {CartContext} from "./context/CartContext"
 
 
+
 function CartItems({items}){
     const {incrementQuantity, decrementQuantity,deleteFromProductFromCart} = useContext(CartContext)
     useEffect(()=>{
@@ -31,13 +32,15 @@ function CartItems({items}){
         } else return false
     }
 
+   
+
     
     return (
         <Container className>
             <Row>
                 <Col>
                     <h1 className="Cart__titleItem">{items.prod.item.name}</h1>
-                   <Image src={items.prod.item.img.url} roundedCircle  className="Home__imgCard"></Image>
+                   <Image src={items.prod.item.img_url} roundedCircle  className="Home__imgCard"></Image>
                 </Col>
                 <Col>
                     <Row className="justify-content-around">
@@ -55,8 +58,9 @@ function CartItems({items}){
                     </Row>
                     <Col>
                     <Row className="justify-content-center">
-                    <h3 className="Cart__priceItem mt-5">Precio por unidad: ${items.prod.item.price}</h3>
+                        <h3 className="Cart__priceItem mt-5">Precio por unidad: ${items.prod.item.price}</h3>
                     </Row>
+                   
                     </Col>
                 </Col>
             </Row>
