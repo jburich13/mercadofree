@@ -12,7 +12,7 @@ export function Items({items}){
             <Card style={{ width: "18rem", margin:"3rem"}}>
             <Card.Body  className="Home_ElementCard shadow-lg">
               <Row className="justify-content-center">
-                <Card.Img variant="top" src={items.img.url} className="Home__imgCard text-center" rounded/>
+                <Card.Img variant="top" src={items.img_url} className="Home__imgCard text-center" rounded/>
               </Row>
               <Card.Title className="m-3 Home__TitleCard">{items.name}</Card.Title>
               <Card.Text>
@@ -26,7 +26,7 @@ export function Items({items}){
               <ItemCount  item={items} stock={items.stock}>
               </ItemCount>
                 <Row className="justify-content-center">
-                <Link className="btn rounded-pill" to={`/item/${items._id}`}>Detalles</Link>
+                <Link className="btn rounded-pill" to={`/item/${items.id}`}>Detalles</Link>
                 </Row>  
             </Card.Body>
           </Card>

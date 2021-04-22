@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import {ItemDetail} from "../components/ItemDetail"
+import {getFirestore} from "../firebase/client"
 
 
 
@@ -9,23 +10,18 @@ import {ItemDetail} from "../components/ItemDetail"
 function ItemDetailContainer() {
   const [items2, setItems2] = useState(null)
   const {itemid} = useParams();
+ 
   useEffect(()=> {
-    if(itemid){
-      fetch("https://custom-build-jburich13.vercel.app/api/index/"+itemid).then(res=>res.json())
-      .then(data =>{
-            setItems2(data)
-            console.log("Hola2")
-              });
+    const db = getFirestore()
+    const itemsCollection = db.collection("items")
+    const item = itemsCollection.doc(itemid);
 
-    } else{
-      fetch("https://custom-build-jburich13.vercel.app/api/index").then(res=>res.json())
-      .then(data =>{
-            setItems2(data)
-            console.log("Hola")
-              });
-      
-    }
-   
+    item.get().then((res) =>{
+      console.log(res.exists)
+      if(res.exists){
+        setItems2(res.data())
+      }
+    })
   },[itemid])
   
     return <ItemDetail itemsDetail={items2}></ItemDetail>

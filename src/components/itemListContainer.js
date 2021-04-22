@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { ItemList } from "./ItemList";
 import FadeLoader from "react-spinners/FadeLoader";
 import {FormContext} from "../components/context/FormContext"
+import {getFirestore} from "../firebase/client"
 
 
 
@@ -12,31 +13,39 @@ function ItemListContainer() {
   const [loading, setLoading] = useState(true);
   const {categoryid} = useParams();
   const {formValue} = useContext(FormContext);
+  const db = getFirestore();
+  const itemsCollection = db.collection("items");
 
+  
 
   useEffect(()=> {
     setLoading(true)
     if(categoryid){
-      fetch("https://custom-build-jburich13.vercel.app/api/index/categoria/"+categoryid).then(res=>res.json())
-      .then(data =>{
-            setItems(data)
-            setLoading(false)
-              });
-
-    }else if(formValue.length !== 0){
-      fetch("https://custom-build-jburich13.vercel.app/api/index/nombre/"+formValue).then(res=>res.json())
-      .then(data =>{
-            setItems(data)
-            setLoading(false)
-              });
+      const categorias = itemsCollection.where("category","==",categoryid)
+      const items = categorias.get();
+      items.then((snapshot)=>{
+        if(snapshot.size >0){
+          setItems(snapshot.docs.map(doc =>{
+            return {id:doc.id, ...doc.data()}
+          } 
+          ))
+              setLoading(false)
+        }
+      })  
     } else{
-      fetch("https://custom-build-jburich13.vercel.app/api/index").then(res=>res.json())
-      .then(data =>{
-            setItems(data)
-            setLoading(false)
-              });
+      const items = itemsCollection.get();
+      items.then((snapshot)=>{
+        if(snapshot.size >0){
+          setItems(snapshot.docs.map(doc =>{
+            return {id:doc.id, ...doc.data()}
+          } 
+          ))
+              setLoading(false)
+        }
+      })
       
     }
+    
    
   },[categoryid,formValue])
   
