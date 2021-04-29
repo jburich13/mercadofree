@@ -32,6 +32,9 @@ function CartItems({items}){
         } else return false
     }
 
+
+    console.log(items.prod.item)
+
    
 
     
@@ -40,7 +43,7 @@ function CartItems({items}){
         <Col>
         <h1 className="Cart__titleItem text-center">{items.prod.item.name}</h1>
         <Row className="justify-content-center">
-            <Image src={items.prod.item.img.url} roundedCircle  className="Cart__Img text-center"></Image>
+            <Image src={items.prod.item.img_url} roundedCircle  className="Cart__Img text-center"></Image>
         </Row>
       
        <Row className="justify-content-between">
