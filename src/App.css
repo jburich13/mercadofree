@@ -179,16 +179,28 @@
             font-weight: bold;
         }
         
-        .btn {
+        .Home__btn {
             color: white !important;
             background-color: #9E2A2B !important;
+            border: none !important;
+            margin: 1rem;
+        }
+        
+        .Home__btn:hover {
+            color: #9E2A2B !important;
+            background-color: white !important;
+        }
+        
+        .Cart__btn {
+            color: black !important;
+            background-color: white !important;
             border: 1px solid #9E2A2B !important;
             margin: 1rem;
         }
         
-        .btn:hover {
-            color: #9E2A2B !important;
-            background-color: white !important;
+        .Cart__btn:hover {
+            color: white !important;
+            background-color: #E09F3E !important;
         }
         
         .btn:focus,
@@ -204,4 +216,55 @@
         .btn-primary:active {
             border: none !important;
             box-shadow: none !important;
+        }
+        
+        .carrito {
+            width: 3rem;
+        }
+        
+        .card-body {
+            padding: 0 !important;
+        }
+        
+        .Home__imgCard {
+            width: 18rem !important;
+            object-fit: contain;
+            justify-content: center;
+        }
+        
+        @media only screen and (max-width: 767px) {
+            .btn {
+                margin-bottom: 20px;
+            }
+        }
+        
+        License Terms .loader {
+            padding-top: 90rem !important;
+        }
+        
+        .Cart__titleItem,
+        .Cart__priceItem {
+            color: white;
+        }
+        
+        .Cart__priceItem {
+            font-size: 1.5rem
+        }
+        
+        .Cart__titleItem {
+            font-size: 2rem;
+        }
+        
+        .Cart__totalPriceItem {
+            font-size: 1rem;
+            color: white;
+        }
+        
+        .Cart__ContainerItems {
+            background-color: #540B0E !important;
+            color: black !important;
+        }
+        
+        .Cart__Img {
+            width: 9rem;
         }

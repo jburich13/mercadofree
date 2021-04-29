@@ -9,36 +9,3 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
-
-.carrito {
-    width: 3rem;
-}
-
-.card-body {
-    padding: 0 !important;
-}
-
-.Home__imgCard {
-    width: 18rem !important;
-    object-fit: contain;
-}
-
-@media only screen and (max-width: 767px) {
-    .btn {
-        margin-bottom: 20px;
-    }
-}
-
-License Terms .loader {
-    padding-top: 90rem !important;
-}
-
-.Cart__titleItem,
-.Cart__priceItem {
-    color: white;
-}
-
-.Cart__ContainerItems {
-    background-color: #540B0E !important;
-    color: black !important;
-}

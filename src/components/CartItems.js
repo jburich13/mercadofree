@@ -33,34 +33,32 @@ function CartItems({items}){
 
     
     return (
-        <Container className>
-            <Row>
+
                 <Col>
-                    <h1 className="Cart__titleItem">{items.prod.item.name}</h1>
-                   <Image src={items.prod.item.img.url} roundedCircle  className="Home__imgCard"></Image>
-                </Col>
-                <Col>
-                    <Row className="justify-content-around">
-                        <Button className="mt-5" onClick={onAdd} disabled={isFull()}>
-                            +
-                        </Button>
-                        <h3 className="Cart__priceItem mt-5">Cantidad: {items.cant}</h3>
-                        <Button className="mt-5" onClick={onRemove}>
+                    <h1 className="Cart__titleItem text-center">{items.prod.item.name}</h1>
+                    <Row className="justify-content-center">
+                        <Image src={items.prod.item.img.url} roundedCircle  className="Cart__Img text-center"></Image>
+                    </Row>
+                  
+                   <Row className="justify-content-between">
+                   <Button className="mt-5 Cart__btn" onClick={onRemove}>
                             -
                         </Button>
-                        <Button className="mt-5" onClick={deleteFromCart}>
-                            X
+                        <h3 className="Cart__priceItem mt-5">{items.cant}</h3>
+                        <Button className="mt-5 Cart__btn" onClick={onAdd} disabled={isFull()}>
+                            +
                         </Button>
                        
-                    </Row>
-                    <Col>
-                    <Row className="justify-content-center">
-                    <h3 className="Cart__priceItem mt-5">Precio por unidad: ${items.prod.item.price}</h3>
-                    </Row>
-                    </Col>
+                   </Row>
+
+                   <Row className="justify-content-center">
+                   <Button className="mt-5 Cart__btn" onClick={deleteFromCart}>
+                            X
+                        </Button>
+                   </Row>
+                   
+                        <h3 className="Cart__totalPriceItem mt-5 text-center">Precio por unidad: ${items.prod.item.price}</h3>
                 </Col>
-            </Row>
-        </Container>
     )
 }
 
