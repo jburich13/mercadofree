@@ -17,7 +17,7 @@ function ItemDetailContainer() {
     const item = itemsCollection.doc(itemid);
 
     item.get().then((res) =>{
-      console.log(res.exists)
+      console.log("exists",res.exists)
       if(res.exists){
         setItems2(res.data())
       }

@@ -1,21 +1,24 @@
-import React, { useContext } from "react"
+import React, { useContext, useState } from "react"
 import { Container, Row, Button } from "react-bootstrap"
 import { CartContext } from "./context/CartContext"
 import {getFirestore} from "../firebase/client"
 import firebase from  "firebase/app"
 import "firebase/firestore"
+import { CartOrder } from "./CartOrder"
 
 
 export function TotalPrice(){
+    const [orders, setOrders] = useState([])
     const {cart, cartPrice} = useContext(CartContext); 
     const generarOrden = ()=>{
         const db = getFirestore()
         const ordersCol = db.collection("orders")
         let orden = {}
+
+    
         
         orden.buyer = {name:"Juan", phone:"3624568434", email:"jburich198@gmail.com"}
         orden.price = cartPrice()
-        console.log("cart",cart)
         orden.items = cart.map(cartItem =>{
             console.log(cartItem)
             const id = cartItem.prod.item.id
@@ -26,7 +29,8 @@ export function TotalPrice(){
         })
 
        ordersCol.add(orden).then((idDocumento)=>{
-           console.log("id documento", idDocumento.id)
+            orden.id=idDocumento.id
+            setOrders([orden, ...orders])
        }).catch(err =>{
            console.log(err)
        })
@@ -34,11 +38,13 @@ export function TotalPrice(){
     console.log(cartPrice())
     return(cart.length <=0 ? "" :  
     <Container>
-            <Row>
-                <h3 className="Cart__priceItem">
+            <Row className="justify-content-between">
+                <h3 className="Cart__priceItem mt-4">
                     Total a pagar: {cartPrice()}
                 </h3>
-                <Button onClick={generarOrden}>Finalizar compra</Button>
+                <Button onClick={generarOrden} className="Cart__btn">Finalizar compra</Button>
             </Row>
+
+            <CartOrder ordenes={orders}></CartOrder>
     </Container>)
 }

@@ -28,7 +28,7 @@ function NavBar (){
     <CartWidget />
     <Form inline className="ml-5">
       <FormControl type="text" placeholder="Buscar por nombre" className="mr-sm-2" onChange={e=> setFormValue(capitalize(e.target.value))} />
-      <Button variant="outline-success" >Search</Button>
+      <Button variant="outline-success" className="Home__btn" >Search</Button>
     </Form>
   </Navbar.Collapse>
 </Navbar>

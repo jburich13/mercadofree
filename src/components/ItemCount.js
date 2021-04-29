@@ -24,14 +24,14 @@ export function ItemCount(item, stock){
     }
     return  <Container>
     <Row className="justify-content-around">
-      <Button onClick={onAdd} disabled={count >=item.stock} className="rounded-pill" >+</Button>
+      <Button onClick={onAdd} disabled={count >=item.stock} className="Home__btn rounded-pill" >+</Button>
       <Card.Text className="mt-4">
         {count}
       </Card.Text>
-      <Button onClick={onRemove}  disabled={count <= 0} className="rounded-pill">-</Button>
+      <Button onClick={onRemove}  disabled={count <= 0} className="rounded-pill Home__btn">-</Button>
     </Row>
     <Row className="justify-content-center">
-      <Button className="m-2 rounded-pill" onClick={agregarCarrito} >Agregar al carrito</Button>
+      <Button className="m-2 rounded-pill Home__btn" onClick={agregarCarrito} >Agregar al carrito</Button>
     </Row>
     
   </Container>
