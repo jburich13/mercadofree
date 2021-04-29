@@ -4,7 +4,7 @@ import {Container,Row, Button, Card} from "react-bootstrap";
 import {CartContext} from "./context/CartContext"
 
 
-export function ItemCount(item, stock){
+export function ItemCount(item){
 
     let [count, setCount] = useState(0);
     const {addToCart} = useContext(CartContext)
