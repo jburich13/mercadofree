@@ -10,6 +10,7 @@ import {FormProvider} from "./components/context/FormContext"
 import {CartProvider} from "./components/context/CartContext"
 import {CartView} from "./components/CartView";
 import {TotalPrice} from "./components/TotalPrice"
+import SignupForm from './components/SingupForm';
 
 
 
@@ -24,6 +25,11 @@ function App() {
                <BrowserRouter>
                <NavBar className="color-nav"></NavBar>
                     <Switch>
+                         <Route exact path="/login">
+                              <SignupForm>
+                                   
+                              </SignupForm>
+                         </Route>
                          <Route exact path="/">
                               <ItemListContainer>
                               </ItemListContainer>    

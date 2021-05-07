@@ -268,3 +268,28 @@
         .Cart__Img {
             width: 9rem;
         }
+        
+        .Form__Container {
+            margin: 2rem;
+            background-color: #282c34;
+            border-radius: 2rem;
+        }
+        
+        .Form__inputLabel {
+            color: white;
+            margin-right: 2rem;
+        }
+        
+        .Form__input {
+            width: 8rem;
+            height: 2rem;
+            padding: 1rem;
+        }
+        
+        .Form__input:focus-visible {
+            outline: none;
+        }
+        
+        .Form__inputLabelContainer {
+            padding: 1rem;
+        }
