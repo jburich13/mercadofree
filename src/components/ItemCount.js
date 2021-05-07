@@ -12,7 +12,6 @@ export function ItemCount(item, stock){
 
   
     const agregarCarrito = ()=>{
-      console.log("hola desde count", item)
       addToCart(item, count);
     }
   

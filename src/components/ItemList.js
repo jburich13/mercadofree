@@ -3,5 +3,8 @@ import {Items} from "./Items"
 
 
 export function ItemList({items=[]}){
-    return(items.map(item => <div><Items items={item}></Items></div> ))
+    
+    return(items.map(item => {
+        return(<div key={item.id}><Items items={item}  ></Items></div>)
+     }))
 }

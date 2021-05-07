@@ -12,17 +12,19 @@ export function Items({items}){
     <Card style={{ width: "18rem", margin:"3rem"}}>
     <Card.Body  className="Home_ElementCard shadow-lg">
       <Row className="justify-content-center">
-        <Card.Img variant="top" src={items.img_url} className="Home__imgCard text-center" rounded/>
+        <Card.Img variant="top" src={items.img_url} className="Home__imgCard text-center"/>
       </Row>
       <Card.Title className="m-3 Home__TitleCard">{items.name}</Card.Title>
-      <Card.Text>
         <Row className="m-3">
+        <Card.Text >
           Precio: {items.price}
+        </Card.Text>
         </Row>
-        <Row className="m-3">
+        <Row  className="m-3">
+        <Card.Text >
           Categoria: {items.category}
+        </Card.Text>
         </Row>
-      </Card.Text>
       <ItemCount  item={items} stock={items.stock}>
       </ItemCount>
         <Row className="justify-content-center">

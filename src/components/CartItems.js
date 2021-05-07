@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Button, Col, Container, Image, Row } from "react-bootstrap";
+import { Button, Col, Image, Row } from "react-bootstrap";
 import {useContext} from "react"
 import {CartContext} from "./context/CartContext"
 
@@ -25,8 +25,6 @@ function CartItems({items}){
     }
 
     const isFull = ()=>{
-
-        console.log("stock",items.prod.item.stock)
         if(items.cant>=items.prod.item.stock){
             return true
         } else return false
@@ -40,7 +38,7 @@ function CartItems({items}){
                 <Col>
                     <h1 className="Cart__titleItem text-center">{items.prod.item.name}</h1>
                     <Row className="justify-content-center">
-                        <Image src={items.prod.item.img_url} roundedCircle  className="Cart__Img text-center"></Image>
+                        <Image src={items.prod.item.img_url} className="Cart__Img text-center"></Image>
                     </Row>
                   
                    <Row className="justify-content-between">

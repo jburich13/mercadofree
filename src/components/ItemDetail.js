@@ -1,7 +1,6 @@
 import React from "react"
 
 export function ItemDetail({itemsDetail}){
-    console.log(itemsDetail)
     return <>
 
         <h2 className="text-white">Nombre: {itemsDetail?.name}</h2>

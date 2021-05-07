@@ -20,7 +20,6 @@ export function TotalPrice(){
         orden.buyer = {name:"Juan", phone:"3624568434", email:"jburich198@gmail.com"}
         orden.price = cartPrice()
         orden.items = cart.map(cartItem =>{
-            console.log(cartItem)
             const id = cartItem.prod.item.id
             const title = cartItem.prod.item.name
             const price = cartItem.prod.item.price * cartItem.quantity
@@ -28,6 +27,7 @@ export function TotalPrice(){
             return {id,title, price, date}
         })
 
+       
        ordersCol.add(orden).then((idDocumento)=>{
             orden.id=idDocumento.id
             setOrders([orden, ...orders])
@@ -35,7 +35,6 @@ export function TotalPrice(){
            console.log(err)
        })
     }
-    console.log(cartPrice())
     return(cart.length <=0 ? "" :  
     <Container>
             <Row className="justify-content-between">
